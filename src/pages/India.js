@@ -8,48 +8,67 @@ import { useEffect } from 'react';
 function India() {
   const [firstIndiaData,setFirstIndiaData]=useState();
   const [secIndiaData,setSecIndiaData]=useState();
+  const [thirdIndiaData,setThirdIndiaData]=useState();
+  const [fourthIndiaData,setFourthIndiaData]=useState();
+
 
  
-  const url=`https://newsapi.org/v2/top-headlines?country=in&apiKey=4583328f31604630a0ce81abaf0821ab`
-  const url2=`https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=4583328f31604630a0ce81abaf0821ab`
-  const apiData=()=>{
+  const url1=`https://newsdata.io/api/1/news?apikey=pub_763955fda3b8df4a8f8a967b0118e16c68b4&category=top&country=in&page=0`
+  const url2=`https://newsdata.io/api/1/news?apikey=pub_763955fda3b8df4a8f8a967b0118e16c68b4&category=top&country=in&page=1`
+  const url3=`https://newsdata.io/api/1/news?apikey=pub_763955fda3b8df4a8f8a967b0118e16c68b4&category=top&country=in&page=2`
+  const url4=`https://newsdata.io/api/1/news?apikey=pub_763955fda3b8df4a8f8a967b0118e16c68b4&category=top&country=in&page=3`
+  
+  const apiData1=()=>{
     axios.get(url2).then((response)=>{
           
-           setFirstIndiaData(response.data.articles);
+           setFirstIndiaData(response.data.results);
           }).catch(()=>{
               throw new Error();
           })
-         
-          
       
   }
 
   const apiData2=()=>{
-    axios.get(url).then((response)=>{
+    axios.get(url1).then((response)=>{
           
-           setSecIndiaData(response.data.articles);
+           setSecIndiaData(response.data.results);
+           
           }).catch(()=>{
               throw new Error();
           })
-         
+       
+  }
+  const apiData3=()=>{
+    axios.get(url3).then((response)=>{
           
+           setThirdIndiaData(response.data.results);
+          }).catch(()=>{
+              throw new Error();
+          })
+      
+  }
+  const apiData4=()=>{
+    axios.get(url4).then((response)=>{
+          
+           setFourthIndiaData(response.data.results);
+          }).catch(()=>{
+              throw new Error();
+          })
       
   }
 
-
-
-  
-  
    useEffect(()=>{
-    apiData();
+    apiData1();
     apiData2();
+    apiData3();
+    apiData4();
   
    },[])
   return (
     <>
-         <MainStore data={firstIndiaData} s_data={secIndiaData}></MainStore>
+         <MainStore data={firstIndiaData} s_data={secIndiaData} t_data={thirdIndiaData} f_data={fourthIndiaData} ></MainStore>
     </>
   )
 }
 
-export default India
+export default India;

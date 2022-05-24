@@ -4,50 +4,67 @@ import MainStore from '../MainStore'
 
 function Sports() {
     const [firstSportsData,setFirstSportsData]=useState();
-  const [secSportsData,setSecSportsData]=useState();
+    const [secSportsData,setSecSportsData]=useState();
+    const [thirdSportsData,setThirdSportsData]=useState();
+    const [fourthSportsData,setFourthSportsData]=useState();
+
 
  
-  const url=`https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=4583328f31604630a0ce81abaf0821ab`
-  const url2=`https://newsapi.org/v2/top-headlines?country=co&category=sports&apiKey=4583328f31604630a0ce81abaf0821ab`
-  const apiData=()=>{
-    axios.get(url2).then((response)=>{
+  const url1=`https://newsdata.io/api/1/news?apikey=pub_763955fda3b8df4a8f8a967b0118e16c68b4&category=sports&country=in&page=0`
+  const url2=`https://newsdata.io/api/1/news?apikey=pub_763955fda3b8df4a8f8a967b0118e16c68b4&category=sports&country=in&page=1`
+  const url3=`https://newsdata.io/api/1/news?apikey=pub_763955fda3b8df4a8f8a967b0118e16c68b4&category=sports&country=in&page=2`
+  const url4=`https://newsdata.io/api/1/news?apikey=pub_763955fda3b8df4a8f8a967b0118e16c68b4&category=sports&country=in&page=3`
+
+  const apiData1=()=>{
+    axios.get(url1).then((response)=>{
           
-           setFirstSportsData(response.data.articles);
+           setFirstSportsData(response.data.results);
           }).catch(()=>{
               throw new Error();
           })
          
-          
-      
   }
 
   const apiData2=()=>{
-    axios.get(url).then((response)=>{
+    axios.get(url2).then((response)=>{
           
-           setSecSportsData(response.data.articles);
+           setSecSportsData(response.data.results);
           }).catch(()=>{
               throw new Error();
           })
-         
-          
-      
   }
 
+  const apiData3=()=>{
+    axios.get(url3).then((response)=>{
+          
+           setThirdSportsData(response.data.results);
+          }).catch(()=>{
+              throw new Error();
+          })
+  }
 
+  const apiData4=()=>{
+    axios.get(url4).then((response)=>{
+          
+           setFourthSportsData(response.data.results);
+          }).catch(()=>{
+              throw new Error();
+          })
+  }
 
-  
-  
    useEffect(()=>{
-    apiData();
+    apiData1();
     apiData2();
+    apiData3();
+    apiData4();
   
    },[])
   
   return (
     <>
-       <MainStore data={firstSportsData} s_data={secSportsData}></MainStore>
+       <MainStore data={firstSportsData} s_data={secSportsData} t_data={thirdSportsData} f_data={fourthSportsData}></MainStore>
     </>
   )
 }
 
-export default Sports
+export default Sports;

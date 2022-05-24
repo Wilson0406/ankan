@@ -24,7 +24,7 @@ function SectionrightCard(props) {
              
                 <div className="pov-card-right col-md-12">
                     <div className='' style={{ width: "16rem",marginLeft:"10px" }}>
-                        <img src={props.data[6].urlToImage}  className='img-fluid' style={{minWidth:"16rem"}} alt="" />
+                        <img src={props.data[6].image_url}  className='img-fluid' style={{minWidth:"16rem"}} alt="" />
                         <div className="card-body">
                             <h6 className="card-title " style={{fontSize:"13px",marginLeft:"-10px"}}>
                                {isText(props.data[6].title)}

@@ -19,7 +19,7 @@ function Section5_first(props) {
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="card-section5-img">
-                                    <img src={props.data[0].urlToImage} className='img-fluid' style={{maxWidth:"9rem"}} alt="" />
+                                    <img src={props.data[0].image_url} className='img-fluid' style={{maxWidth:"9rem"}} alt="" />
                                 </div>
                             </div>
                             <div className="col-md-6">
@@ -33,7 +33,7 @@ function Section5_first(props) {
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="card-section5-img">
-                                    <img src={props.data[1].urlToImage} className='img-fluid' style={{maxWidth:"9rem"}} alt="" />
+                                    <img src={props.data[1].image_url} className='img-fluid' style={{maxWidth:"9rem"}} alt="" />
                                 </div>
                             </div>
                             <div className="col-md-6">
@@ -49,7 +49,7 @@ function Section5_first(props) {
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="card-section5-img">
-                                    <img src={props.data[2].urlToImage} className='img-fluid' style={{maxWidth:"9rem"}} alt="" />
+                                    <img src={props.data[2].image_url} className='img-fluid' style={{maxWidth:"9rem"}} alt="" />
                                 </div>
                             </div>
                             <div className="col-md-6">
@@ -65,12 +65,12 @@ function Section5_first(props) {
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="card-section5-img">
-                                    <img src={props.data[3].urlToImage} className='img-fluid' style={{maxWidth:"9rem"}} alt="" />
+                                    <img src={props.data[3].image_url} className='img-fluid' style={{maxWidth:"9rem"}} alt="" />
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="card-section5-text">
-                                    {isText(props.data[2].title)}
+                                    {isText(props.data[3].title)}
                                 </div>
 
                             </div>

@@ -14,7 +14,7 @@ function Section4_left(props) {
         <h4 style={{ fontSize: "15px", marginLeft: "6px", display: "inline-block" }}>Spotlight<div style={{ background: "red", display: "inline-block", width: "23rem", height: "5px",marginLeft:"3px" }}></div></h4>
        { props.data?(
         <div className='card card-section4-left ' style={{maxWidth:"28rem"}}>
-            <img src={props.data[0].urlToImage} className='Card image cap'  alt="" />
+            <img src={props.data[0].image_url} className='Card image cap'  alt="" />
             <div className="card-body-section4-left my-2">
                 <h6> {isText(props.data[0].title)}</h6>
             </div>
