@@ -7,12 +7,12 @@ function Sports() {
   const [secSportsData,setSecSportsData]=useState();
 
  
-  const url=`https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=4583328f31604630a0ce81abaf0821ab`
-  const url2=`https://newsapi.org/v2/top-headlines?country=co&category=sports&apiKey=4583328f31604630a0ce81abaf0821ab`
+  const url=`https://newsdata.io/api/1/news?apikey=pub_76454b22a4ed020a6b37acb03bf13e29ef92&category=top&country=in&page=0`
+  const url2=`https://newsdata.io/api/1/news?apikey=pub_76454b22a4ed020a6b37acb03bf13e29ef92&category=top&country=in&page=1`
   const apiData=()=>{
-    axios.get(url2).then((response)=>{
+    axios.get(url).then((response)=>{
           
-           setFirstSportsData(response.data.articles);
+           setFirstSportsData(response.data.results);
           }).catch(()=>{
               throw new Error();
           })
@@ -22,9 +22,9 @@ function Sports() {
   }
 
   const apiData2=()=>{
-    axios.get(url).then((response)=>{
+    axios.get(url2).then((response)=>{
           
-           setSecSportsData(response.data.articles);
+           setSecSportsData(response.data.results);
           }).catch(()=>{
               throw new Error();
           })

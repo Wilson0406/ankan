@@ -28,19 +28,19 @@ function MainStore(props) {
       }
       </div>
 
-      <div className="container my-5">
+       <div className="container my-5">
       { props.data?(
-        <Card data={props.data.slice(7,11)}></Card>
+        <Card data={props.data.slice(0,8)}></Card>
       ):(<></>)
       }
       </div>
 
-
+  
       <div className="container" style={{ marginTop: "10px" }}>
       { props.data?(
         <div className="row">
-          <div className="col-md-8" style={{ marginLeft: "28px" }} ><SectionLeftCard data={props.data.slice(11,17)} ></SectionLeftCard></div>
-          <div className="col-md-3" style={{ marginLeft: "7px" }}><SectionrightCard data={props.data.slice(11,18)}></SectionrightCard></div>
+          <div className="col-md-8" style={{ marginLeft: "28px" }} ><SectionLeftCard data={props.data.slice(0,9)} ></SectionLeftCard></div>
+          <div className="col-md-3" style={{ marginLeft: "7px" }}><SectionrightCard data={props.data.slice(0,9)}></SectionrightCard></div>
 
         </div>
       ):(<></>)
@@ -52,12 +52,12 @@ function MainStore(props) {
        { props.data?(
         <div className="row">
           <div className="col-md-6">
-            <Section4_left data={props.data.slice(18,20)}>
+            <Section4_left data={props.data.slice(0,9)}>
             </Section4_left>
           </div>
 
   
-
+    
           <div className="col-md-6">
             <Section4_right>
 
@@ -80,7 +80,7 @@ function MainStore(props) {
       }
       </div>
     
-
+    
       <div className="container my-5">
       { props.s_data?(
         <Card data={props.s_data}></Card>
@@ -93,17 +93,17 @@ function MainStore(props) {
         props.s_data?(
       <div className="row">
         <div className="col-md-4">
-        <Section5_first data={props.s_data.slice(6,12)}></Section5_first>
+        <Section5_first data={props.s_data.slice(0,9)}></Section5_first>
         </div>
         <div className="col-md-4">
-        <Section5_first data={props.s_data.slice(12,20)}></Section5_first>
+        <Section5_first data={props.s_data.slice(0,9)}></Section5_first>
         </div>
         <div className="col-md-4">
-        <Section5_first data={props.s_data.slice(9,15)}></Section5_first>
+        <Section5_first data={props.s_data.slice(0,9)}></Section5_first>
         </div>
       </div>
      ):(<></>) }
-      </div>
+      </div> 
 
     </>
   )

@@ -32,7 +32,7 @@ function SectionLeftCard(props) {
                     <div className='card-left' style={{
                         width: "22rem", height:"20rem", marginLeft: "8px"
                     }}>
-                        <img src={props.data[0].urlToImage} className="card-img-top" alt="..." />
+                        <img src={props.data[0].image_url} className="card-img-top" alt="..." />
                         <div className="card-body">
                             <h6 className="card-title">{isText(props.data[0].title)}</h6>
                             <span ><i className="fa-solid fa-circle-user"></i><span className="logo-text">{props.data[0].author}</span>
